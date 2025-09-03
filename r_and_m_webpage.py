@@ -18,6 +18,8 @@ html_content = """
 </head>
 <body>
 <main>
+
+<h1>Rick and Morty</h1>
 """
 
 
@@ -36,27 +38,9 @@ for char in data["results"]:
             <li>Status: {char['status']}</li>
             <li>Species: {char['species']}</li>
             <li>Gender: {char['gender']}</li>
-            <li>
-                Location:
-                <a href="{char['location']['url']}" target="_blank">
-                    {char['location']['name']}
-                </a>
-            </li>
-            <li>
-                Origin:
-                <a href="{char['origin']['url']}" target="_blank">
-                    {char['origin']['name']}
-                </a>
-            </li>
+            <li>Location: {char['location']['name']}</li>
+            <li>Origin: {char['origin']['name']}</li>
         </ul>
-
-        <details>
-            <summary>Episodes</summary>
-
-            <ul>
-                {' '.join(f'<li><a href="{episode}" target="_blank">{episode}</a></li>' for episode in char['episode'])}
-            </ul>
-        </details>
 
         <p>
             Data source:
